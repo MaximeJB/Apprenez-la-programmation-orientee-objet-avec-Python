@@ -15,12 +15,27 @@ class File:
 
 
 class ImageFile(File):
-    """Fichier image.
+    def __init__(self,name,size):
+        super().__init__(name)
+        super().__init__(size)
+        print(f"le nom de l'image est {self.name}")
 
-    Pas plus à ajouter pour l'instant !
-    """
 
-    pass
+class Gif(ImageFile): 
+    def display(self):
+        super().display()
+        self.name.display()
+        print("l'image est un GIF")
+
+
+class JPG(ImageFile):
+     def __init__(self,name,size):
+        super().__init__(name)
+        super().__init__(size)
+
+    
+    
+    
 
 
 class User:
@@ -87,16 +102,14 @@ class FilePost(Post):
 
     def __init__(self, user, time_posted, content, file):
         """Initialise le fichier."""
-        self.user = user
-        self.time_posted = time_posted
-        self.content = content
+        super.__init__(user,time_posted,content)
         self.file = file
 
     def display(self):
         """Affiche le contenu et le fichier."""
         super().display()
-        print("pièce jointe:")
         self.file.display()
+        print(f"le nom du fichier est {self.file}")
 
 
 class Thread:
