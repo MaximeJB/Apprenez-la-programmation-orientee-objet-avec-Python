@@ -147,33 +147,33 @@ class Thread:
 
 
 def main():
-    """Lance le code principal."""
-    user = User("John", "superpassword")
-    moderator = Moderator("Lucie", "helloworld")
+   """créer un objet user et 1 modo
+    User create thread
+    Moderator post
+    User posts in thread
+    Moderator remove posts 
+    User posts images
+"""
+John = User("John", "1234")
+Illoutch = Moderator("Illoutch", "Romimi")
 
-    cake_thread = user.make_thread("Gâteau à la vanille 🍰 ???", "Vous aimez ou non ?")
-    cake_thread.display()
-
-    moderator.post(cake_thread, content="Oui j'aime beaucoup ! 😚")
-    cake_thread.display()
-
-    irrelevant_post = user.post(cake_thread, content="Et vous aimez les voitures ?")
-    response = moderator.post(cake_thread, content="C'est hors sujet sur ce forum 😕")
-    cake_thread.display()
-
-    print()
-    print("après quelques minutes, le modérateur supprime les messages hors sujets...")
-    print()
-    # importer time n'était pas necessaire, c'est un plus:
-    time.sleep(2)
-    moderator.delete(cake_thread, irrelevant_post)
-    moderator.delete(cake_thread, response)
-    cake_thread.display()
-
-    image = PNGImageFile(name="image de gâteau", size=3)
-    user.post(cake_thread, content="Voici une image de mon gâteau !", file=image)
-    moderator.post(cake_thread, "Woah, sublime !")
-    cake_thread.display()
+cat = John.make_thread("Cat", "Parlons en !!")
+John.post(cat, content = "Hello tout le monde")
 
 
+
+response = Illoutch.post(cat, content = "J'adore Illoutch et Romimi")
+yes = John.post(cat, content = "IetR !!")
+
+cat.display()
+
+John.post(cat, content= "CECI EST ILLEGAL")
+Illoutch.delete(cat, response)
+Illoutch.delete(cat, yes)
+
+cat.display()
+image = PNGImageFile(name= "Illoutch", size = 4)
+John.post(cat, content="VOICI ILLOUTCH", file = image)
+
+cat.display()
 main()

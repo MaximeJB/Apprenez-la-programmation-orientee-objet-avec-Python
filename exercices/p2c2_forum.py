@@ -16,14 +16,13 @@ class File:
 
 class ImageFile(File):
     def __init__(self,name,size):
-        super().__init__(name)
-        super().__init__(size)
+        super(name,size)
         print(f"le nom de l'image est {self.name}")
 
 
 class Gif(ImageFile): 
     def display(self):
-        super().display()
+        super().display
         self.name.display()
         print("l'image est un GIF")
 
