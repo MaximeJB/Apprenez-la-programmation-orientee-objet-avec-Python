@@ -1,9 +1,9 @@
 """Point d'entrée."""
 
-from contact.user import User
-from contact.owlcontact import OwlContactSystem
-from contact.textcontact import TextContactSystem
-from contact.helpers import send_mass_messages
+from contacttt.user import User
+from contacttt.owlcontact import OwlContactSystem
+from contacttt.textcontact import TextContactSystem
+from contacttt.helpers import send_mass_messages
 
 
 def main():
